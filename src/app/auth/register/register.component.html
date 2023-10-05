@@ -1,0 +1,64 @@
+<div #mainContainer class="flex flex-col md:flex-row p-4 gap-5 full-height full-width">
+    <div class="infoCard md:w-1/2">
+        <div>
+            <h1>PersonaShare</h1>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <p>
+                PersonaShare is a web application that allows users to store their personal details on their device
+                
+                and share them with recruiters securely and easily.
+                <br>
+                <br>
+                No more filling out forms, just share your PersonaShare profile.
+            </p>
+        </div>
+    </div>
+    <div class="grid gap-1 content-center">
+        <div>
+            <h1 class="heading">Register</h1>
+        </div>
+        <form [formGroup]="registerForm">
+              <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">First Name</mat-label>
+                <input matInput placeholder="" formControlName="firstName">
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">Last Name</mat-label>
+                <input matInput placeholder="" formControlName="lastName">
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">Email Address</mat-label>
+                <input matInput type="email" placeholder="" formControlName="email">
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">Password</mat-label>
+                <input matInput placeholder="" type="password" formControlName="password">
+                <mat-hint>Must be at least 6 characters long</mat-hint>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">Confirm Password</mat-label>
+                <input matInput placeholder="" type="password" formControlName="confirmPassword">
+              </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="register()">Register</button>
+            <span>    Already have a Profile? <span class="routerLink" routerLink="/auth/login">Login</span></span>
+        </div>
+        </form>
+      
+    </div>
+
+</div>

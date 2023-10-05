@@ -1,0 +1,30 @@
+<div class="flex flex-row w-full justify-between items-center p-5 removePaddingFromInput">
+    <div>
+        <h2 class="font-bold text-2xl">PersonaShare</h2>
+    </div>
+    <div class="hidden lg:flex toolbar-search transparentSearchInput">
+        <mat-nav-list class="!flex flex-row">
+            <a *ngFor="let item of menuItems" class="whitespace-nowrap" mat-list-item [routerLink]="item.link" routerLinkActive="activeLink">
+                <mat-icon class="!pr-3" matListIcon>{{item.icon}}</mat-icon>
+                <span>{{item.name}}</span>
+            </a>
+          </mat-nav-list>
+    </div>
+    <div class="toolbar-search">
+        
+    </div>
+    <div class="flex flex-row headerIcons">
+        <div>
+            <mat-icon>notifications</mat-icon>
+        </div>
+        <div>
+            <mat-icon>settings</mat-icon>
+        </div>
+        <div class="" [matMenuTriggerFor]="menu" class="lg:hidden">
+            <mat-icon style="color: darkgreen;">menu</mat-icon>
+        </div>
+    </div>
+    <mat-menu #menu="matMenu">
+        <button *ngFor="let item of menuItems" mat-menu-item [routerLink]="item.link" routerLinkActive="activeLink">{{item.name}}</button>
+      </mat-menu>
+</div>

@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+$primaryColour: #1A4999;
+$darkPrimaryColour: #113066;
+$secondaryColour: #E9EDF5;
+$selectedColour: #113066;
+$white: #FFFFFF;
+$green: #47B29F;
+$darkWhite: #F7F8FA;
+$greyBlack: #555555;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex { display: flex; }
+.full-height { height: 100%; }
+.full-width { width: 100%; }
+
+// Side bar ========================================================
+
+.sidebar {
+    background-color: $primaryColour;
+    @apply flex flex-col full-height;
+   
+    .mat-expansion-panel {
+        background-color: $darkPrimaryColour !important;
+        .mat-expansion-panel-header-title, 
+        .mat-expansion-panel-header-description,
+        .mat-expansion-panel-body {
+            color: $secondaryColour !important;
+        }
+    }
+
+    .mat-nav-list {
+        a {
+            background-color: $primaryColour;
+        color: $white;
+        }
+        
+        a:hover {
+            background-color: $selectedColour;
+        }
+    }
+
+    .activeLink {
+        background-color: $selectedColour !important;
+    }
+
+}
+
+
+// Header tool bar ========================================================
+
+.activeLink {
+    border-bottom: $green solid 2px !important;
+}
+
+.removePaddingFromInput {
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+    }
+}
+
+.toolbar-search {
+
+    .mat-form-field,
+    .mat-form-field-wrapper,
+    .mat-form-field-flex {
+        height: 40px;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+
+    .mat-form-field-infix {
+        border-top: 0;
+    }
+
+    .mat-form-field-prefix {
+        padding-right: 12px;
+    }
+}
+
+.transparentSearchInput {
+    .mat-form-field-appearance-outline 
+    .mat-form-field-outline {
+        color: $white;
+    }
+    
+    .mat-form-field-label {
+        @apply text-xs;
+        top: 2.25em;
+    }
+}
+
+.headerIcons {
+    @apply gap-3;
+    .mat-icon {
+        cursor: pointer;
+    }
+
+    .mat-icon:hover {
+        color: $green;
+    }
+}
+
+
+// dashboard ========================================================
+
+.darkWhiteBackground {
+    background-color: $darkWhite;
+}
+
+a, .routerLink {
+    color: $primaryColour;
+    cursor: pointer;
+}
+
+.heading {
+    color: $greyBlack;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.infoCard {
+    background-image: url('/assets/images/office.jpg');
+    background-position: center;
+    margin: 0 20px 0 0;
+    border-radius: 50px;
+    padding: 50px;
+
+    h1 {
+        color: $greyBlack;
+        font-size: 2em;
+        margin: 15px 0;
+        font-weight: bolder;
+    }
+
+    p {
+        color: $greyBlack;
+        font-size: 1em;
+        margin: 15px 0;
+    }
+}

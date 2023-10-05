@@ -1,0 +1,45 @@
+<div #mainContainer class="flex flex-col md:flex-row place-content-center p-4 gap-5 full-height full-width">
+    <div class="infoCard md:w-1/2">
+        <div>
+            <h1>PersonaShare</h1>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <p>
+                PersonaShare is a web application that allows users to store their personal details on their device
+                
+                and share them with recruiters securely and easily.
+                <br>
+                <br>
+                No more filling out forms, just share your PersonaShare profile.
+            </p>
+        </div>
+    </div>
+    <div class="grid gap-9 content-center">
+        <div>
+            <h1 class="heading">Login</h1>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">Username</mat-label>
+                <input matInput placeholder="" #username>
+                <mat-icon class="pr-3" matPrefix>person</mat-icon>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label  class="text-sm">Password</mat-label>
+                <input matInput placeholder="" type="password" #password>
+                <mat-icon class="pr-3" matPrefix>phonelink_lock</mat-icon>
+              </mat-form-field>
+        </div>
+        <div>
+            <button [disabled]="!username.value || !password.value" 
+            mat-raised-button color="primary" (click)="login(username.value,password.value)">Login</button>
+            <span>    Don't have a Profile? <span class="routerLink" routerLink="/auth/register">Register</span></span>
+        </div>
+    </div>
+
+</div>
